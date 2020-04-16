@@ -63,7 +63,7 @@ for n=1:nContrasts
    [~, idx] = min(abs(masks - contrastTime));
    
    % perform subtraction
-   r(:,:,n) = contrastFrame - double(img(:,:,idx + firstMaskFrame));
+   r(:,:,n) = contrastFrame - double(img(:,:,idx + firstMaskFrame-1));
    
    %fprintf("Output %d- contrast %d, mask %d\n", n, n+startContrastFrame-1, idx + firstMaskFrame-1);
 end
