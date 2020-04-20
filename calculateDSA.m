@@ -43,10 +43,10 @@ contrasts = tr(t >= endPhaseTimes(2) & t < endPhaseTimes(end));
 nContrasts = numel(contrasts);
 
 % find the offset in frames to the first contrast image
-startContrastFrame = find(t == endPhaseTimes(2));
+startContrastFrame = find(t >= endPhaseTimes(2),1);
 
 % ditto for the first mask
-firstMaskFrame = find(t == endPhaseTimes(1));
+firstMaskFrame = find(t >= endPhaseTimes(1),1);
 
 % pre-allocate results array
 r = zeros(size(img,1), size(img,2), nContrasts);
